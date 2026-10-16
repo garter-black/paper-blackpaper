@@ -1,0 +1,1648 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blackpaper2 v1 - Pitch Black Industries - Suicide Reduction Arm Research</title>
+<meta name="description" content="100 methods for suicide prevention and mental health, ranked highest-impact-easiest first. Pitch Black Industries Suicide Reduction Arm Research." />
+<style>
+  :root {
+    --bg: #000;
+    --fg: #fff;
+    --dim: #888;
+    --line: #222;
+    --acc: #fff;
+    --serif: "Didot", "Bodoni 72", "Bodoni Moda", "Playfair Display", Georgia, "Times New Roman", serif;
+    --sans: "Helvetica Neue", "Inter", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--fg); margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: var(--fg); text-decoration: none; border-bottom: 1px solid #444; }
+  a:hover { border-bottom-color: var(--fg); }
+
+  .wrap { max-width: 1480px; margin: 0 auto; padding: 64px 56px 96px; }
+
+  /* Hero */
+  .hero { padding: 96px 0 56px; border-bottom: 1px solid var(--line); }
+  .hero .brandmark {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 64px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 108px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 32px 0;
+    text-transform: uppercase;
+  }
+  .hero .sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(20px, 2.4vw, 32px);
+    line-height: 1.25;
+    font-weight: 400;
+    color: #ccc;
+    margin: 0 0 32px 0;
+    max-width: 1080px;
+  }
+  .hero .tag {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-top: 48px;
+  }
+  .hero .tag b { color: var(--fg); font-weight: 700; }
+
+  /* Headline numbers */
+  .headline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin: 64px 0;
+  }
+  .hc { padding: 32px 24px; border-right: 1px solid var(--line); }
+  .hc:last-child { border-right: none; }
+  .hc .lbl { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--dim); margin-bottom: 16px; }
+  .hc .val { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 44px); line-height: 1; letter-spacing: -0.02em; }
+  .hc .sub2 { font-size: 12px; color: var(--dim); margin-top: 10px; }
+
+  /* Two-column layout */
+  .layout { display: grid; grid-template-columns: 320px 1fr; gap: 64px; align-items: start; }
+  @media (max-width: 1100px) { .layout { grid-template-columns: 1fr; } .toc { position: static !important; } }
+
+  /* TOC */
+  .toc {
+    position: sticky;
+    top: 24px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    font-size: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .toc h3 { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--dim); margin: 24px 0 16px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .toc h3:first-of-type { border-top: none; padding-top: 0; }
+  .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: tc; }
+  .toc li { border-bottom: 1px solid #181818; }
+  .toc a { display: flex; gap: 14px; padding: 7px 0; align-items: baseline; border: none; }
+  .toc .trnk { font-family: var(--mono); font-size: 10px; color: var(--dim); min-width: 28px; }
+  .toc .tname { font-size: 12px; line-height: 1.35; }
+
+  /* Sections */
+  .sec { margin-top: 64px; }
+  .sttl { font-family: var(--serif); font-weight: 400; font-size: 32px; letter-spacing: -0.01em; text-transform: uppercase; margin: 0 0 32px 0; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+
+  /* Method card */
+  .m { padding: 32px 0; border-bottom: 1px solid var(--line); }
+  .m:last-child { border-bottom: none; }
+  .mh { display: flex; align-items: baseline; gap: 28px; margin-bottom: 16px; }
+  .rnk { font-family: var(--mono); font-size: 14px; color: var(--dim); letter-spacing: 0.18em; min-width: 56px; }
+  .ttl { font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.6vw, 32px); letter-spacing: -0.01em; margin: 0; line-height: 1.15; }
+  .mg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 16px 0 24px 0; }
+  .mgc { padding: 14px 16px; border-right: 1px solid var(--line); }
+  .mgc:last-child { border-right: none; }
+  .mgc .lbl { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--dim); margin-bottom: 6px; }
+  .mgc .val { font-family: var(--serif); font-size: 20px; line-height: 1.1; }
+  .blurb { margin: 0 0 12px 0; font-size: 15px; line-height: 1.6; color: #ddd; }
+  .src { margin: 0; font-size: 11px; color: var(--dim); font-style: italic; }
+
+  /* Footer */
+  footer { margin-top: 96px; padding-top: 32px; border-top: 1px solid var(--line); font-size: 11px; color: var(--dim); letter-spacing: 0.18em; text-transform: uppercase; }
+
+  /* Print */
+  @media print {
+    .toc { display: none; }
+    .layout { grid-template-columns: 1fr; }
+    body { font-size: 11px; }
+    .m { page-break-inside: avoid; }
+  }
+
+  .public-interest-notice { margin: 28px 0 46px; padding: 22px 24px; border: 1px solid #3a3a3a; color: #d8d8d8; font-size: 13px; line-height: 1.7; }
+  .public-interest-notice strong { display:block; color:#fff; letter-spacing:.24em; text-transform:uppercase; font-size:10px; margin-bottom:10px; }
+</style>
+<script src="/_pbi/player.js" defer></script></head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="brandmark">Pitch Black Industries &nbsp;|&nbsp; Suicide Reduction Arm &nbsp;|&nbsp; Research</div>
+    <h1>Pitch Black Industries<br/>Suicide Reduction Arm Research</h1>
+    <p class="sub">A free public-interest evidence map of suicide-prevention interventions, their implementation costs and the uncertainty around their effects.</p>
+    <div class="tag">100 interventions · preliminary gross impact range · overlap-adjusted verification pending</div>
+  </header>
+  <section class="public-interest-notice" aria-label="Public-interest research notice">
+<strong>Open public-interest research · Free access</strong>
+This paper is a charitable research effort published free for everyone to read, share, critique and adapt with attribution. It is not a paid product, investment solicitation, promise of returns, or substitute for legal, financial, medical or regulatory advice. Cost, return, success-rate and impact figures are research hypotheses that require independent verification before use. Method-level estimates are not additive and must not be read as a forecast for a random or passive portfolio.
+</section>
+
+  <section class="headline">
+    <div class="hc">
+      <div class="lbl">Global annual suicides</div>
+      <div class="val">720,000</div>
+      <div class="sub2">WHO 2024 estimate; one every 40 sec.</div>
+    </div>
+    <div class="hc">
+      <div class="lbl">Methods in this paper</div>
+      <div class="val">100</div>
+      <div class="sub2">Ranked highest-impact-easiest first.</div>
+    </div>
+    <div class="hc">
+      <div class="lbl">Modelled lives protected / yr</div>
+      <div class="val">174,650 to 700,300</div>
+      <div class="sub2">Preliminary gross range; interventions overlap and cannot be added as independent effects.</div>
+    </div>
+    <div class="hc">
+      <div class="lbl">Total annual cost</div>
+      <div class="val">$8.81B to $68.09B</div>
+      <div class="sub2">Roughly the cost of one mid-size war.</div>
+    </div>
+  </section>
+
+  <p style="font-size:14px; line-height:1.65; color:#ccc; max-width:840px;">
+    <b>Thesis.</b> This free public-interest review assembles 100 suicide-prevention interventions for scrutiny, replication and implementation planning. The displayed range of <b>174,650 to 700,300</b> lives protected per year is a preliminary gross scenario produced by the paper’s original model. It is not a forecast: interventions overlap, effects may not transport across populations, and implementation capacity constrains scale. The next revision must deduplicate effects and attach a reproducible evidence ledger before the aggregate range is used externally.
+  </p>
+
+  <div class="layout">
+    <aside class="toc">
+      <h3>All 100 methods</h3>
+      <ol>
+        <li><a href="#m1"><span class="trnk">001</span><span class="tname">Means restriction: pesticide bans (...</span></a></li><li><a href="#m2"><span class="trnk">002</span><span class="tname">Means restriction: firearm permit-t...</span></a></li><li><a href="#m3"><span class="trnk">003</span><span class="tname">Means restriction: bridge barriers ...</span></a></li><li><a href="#m4"><span class="trnk">004</span><span class="tname">Means restriction: blister-pack ana...</span></a></li><li><a href="#m5"><span class="trnk">005</span><span class="tname">Safety Planning Intervention (SPI+)...</span></a></li><li><a href="#m6"><span class="trnk">006</span><span class="tname">988 / 3-digit crisis line expansion...</span></a></li><li><a href="#m7"><span class="trnk">007</span><span class="tname">Youth Aware of Mental Health (YAM) ...</span></a></li><li><a href="#m8"><span class="trnk">008</span><span class="tname">Lethal means counseling (brief in-c...</span></a></li><li><a href="#m9"><span class="trnk">009</span><span class="tname">AI chatbot CBT for depression (Ther...</span></a></li><li><a href="#m10"><span class="trnk">010</span><span class="tname">Dialectical Behavior Therapy (DBT) ...</span></a></li><li><a href="#m11"><span class="trnk">011</span><span class="tname">Caring Contacts post-crisis text/em...</span></a></li><li><a href="#m12"><span class="trnk">012</span><span class="tname">Brief Intervention and Contact (BIC...</span></a></li><li><a href="#m13"><span class="trnk">013</span><span class="tname">Gatekeeper training (QPR, ASIST, sa...</span></a></li><li><a href="#m14"><span class="trnk">014</span><span class="tname">Universal screening for suicide ris...</span></a></li><li><a href="#m15"><span class="trnk">015</span><span class="tname">AI mood/passive-sensing monitoring ...</span></a></li><li><a href="#m16"><span class="trnk">016</span><span class="tname">Universal anti-suicide public messa...</span></a></li><li><a href="#m17"><span class="trnk">017</span><span class="tname">Cognitive Behavioral Therapy (CBT) ...</span></a></li><li><a href="#m18"><span class="trnk">018</span><span class="tname">Lithium maintenance in bipolar diso...</span></a></li><li><a href="#m19"><span class="trnk">019</span><span class="tname">Esketamine (Spravato) for treatment...</span></a></li><li><a href="#m20"><span class="trnk">020</span><span class="tname">Collaborative Assessment and Manage...</span></a></li><li><a href="#m21"><span class="trnk">021</span><span class="tname">Cognitive Therapy for Suicide Preve...</span></a></li><li><a href="#m22"><span class="trnk">022</span><span class="tname">Primary-care collaborative care for...</span></a></li><li><a href="#m23"><span class="trnk">023</span><span class="tname">Esketamine + SSRI/SNRI augmentation...</span></a></li><li><a href="#m24"><span class="trnk">024</span><span class="tname">NHS-style Improving Access to Psych...</span></a></li><li><a href="#m25"><span class="trnk">025</span><span class="tname">988 SMS/text crisis service expansi...</span></a></li><li><a href="#m26"><span class="trnk">026</span><span class="tname">AI companion for 24/7 non-crisis lo...</span></a></li><li><a href="#m27"><span class="trnk">027</span><span class="tname">Crisis residential stabilization (s...</span></a></li><li><a href="#m28"><span class="trnk">028</span><span class="tname">Peer support specialists with lived...</span></a></li><li><a href="#m29"><span class="trnk">029</span><span class="tname">Mental health parity enforcement (i...</span></a></li><li><a href="#m30"><span class="trnk">030</span><span class="tname">Tele-psychiatry for rural / frontie...</span></a></li><li><a href="#m31"><span class="trnk">031</span><span class="tname">National strategic plan for suicide...</span></a></li><li><a href="#m32"><span class="trnk">032</span><span class="tname">Veteran suicide prevention (VA REAC...</span></a></li><li><a href="#m33"><span class="trnk">033</span><span class="tname">Indigenous / Aboriginal community-l...</span></a></li><li><a href="#m34"><span class="trnk">034</span><span class="tname">Aboriginal / First Nations communit...</span></a></li><li><a href="#m35"><span class="trnk">035</span><span class="tname">Out-of-home reconnection programs f...</span></a></li><li><a href="#m36"><span class="trnk">036</span><span class="tname">Family Acceptance Project training ...</span></a></li><li><a href="#m37"><span class="trnk">037</span><span class="tname">Zero Suicide Initiative (health-sys...</span></a></li><li><a href="#m38"><span class="trnk">038</span><span class="tname">Aftercare / case management after p...</span></a></li><li><a href="#m39"><span class="trnk">039</span><span class="tname">Assertive Community Treatment (ACT)...</span></a></li><li><a href="#m40"><span class="trnk">040</span><span class="tname">Mental health first aid (MHFA) publ...</span></a></li><li><a href="#m41"><span class="trnk">041</span><span class="tname">AI-screened social media (passive o...</span></a></li><li><a href="#m42"><span class="trnk">042</span><span class="tname">Anti-bullying school programs (Olwe...</span></a></li><li><a href="#m43"><span class="trnk">043</span><span class="tname">Sleep hygiene / circadian intervent...</span></a></li><li><a href="#m44"><span class="trnk">044</span><span class="tname">School psychologist ratio mandate (...</span></a></li><li><a href="#m45"><span class="trnk">045</span><span class="tname">Adolescent depression universal scr...</span></a></li><li><a href="#m46"><span class="trnk">046</span><span class="tname">Postpartum depression screening (EP...</span></a></li><li><a href="#m47"><span class="trnk">047</span><span class="tname">Perinatal mental health home visiti...</span></a></li><li><a href="#m48"><span class="trnk">048</span><span class="tname">Esketamine single-dose emergency re...</span></a></li><li><a href="#m49"><span class="trnk">049</span><span class="tname">AI voice biomarker screening for de...</span></a></li><li><a href="#m50"><span class="trnk">050</span><span class="tname">Clozapine for treatment-resistant s...</span></a></li><li><a href="#m51"><span class="trnk">051</span><span class="tname">Universal Basic Income (UBI) pilot ...</span></a></li><li><a href="#m52"><span class="trnk">052</span><span class="tname">Conditional Cash Transfer for at-ri...</span></a></li><li><a href="#m53"><span class="trnk">053</span><span class="tname">Cash transfers targeted at youth (K...</span></a></li><li><a href="#m54"><span class="trnk">054</span><span class="tname">Free public college tuition + unive...</span></a></li><li><a href="#m55"><span class="trnk">055</span><span class="tname">Free public trade / vocational trai...</span></a></li><li><a href="#m56"><span class="trnk">056</span><span class="tname">Job-guarantee program for the long-...</span></a></li><li><a href="#m57"><span class="trnk">057</span><span class="tname">Living-wage mandate + automatic min...</span></a></li><li><a href="#m58"><span class="trnk">058</span><span class="tname">Free universal childcare (0-5yr pub...</span></a></li><li><a href="#m59"><span class="trnk">059</span><span class="tname">Universal paid family leave (6 mont...</span></a></li><li><a href="#m60"><span class="trnk">060</span><span class="tname">Universal paid sick leave (10 days/...</span></a></li><li><a href="#m61"><span class="trnk">061</span><span class="tname">Universal pre-K (3-4yr public presc...</span></a></li><li><a href="#m62"><span class="trnk">062</span><span class="tname">Free universal school meals (breakf...</span></a></li><li><a href="#m63"><span class="trnk">063</span><span class="tname">Public broadband as utility (fiber ...</span></a></li><li><a href="#m64"><span class="trnk">064</span><span class="tname">Public mental health EHR open-API i...</span></a></li><li><a href="#m65"><span class="trnk">065</span><span class="tname">Affordable housing trust fund (5% r...</span></a></li><li><a href="#m66"><span class="trnk">066</span><span class="tname">Housing First for chronic homelessn...</span></a></li><li><a href="#m67"><span class="trnk">067</span><span class="tname">Section 8 / housing choice vouchers...</span></a></li><li><a href="#m68"><span class="trnk">068</span><span class="tname">Universal eviction-prevention cash ...</span></a></li><li><a href="#m69"><span class="trnk">069</span><span class="tname">Universal foreclosure-prevention ca...</span></a></li><li><a href="#m70"><span class="trnk">070</span><span class="tname">Bankruptcy-medical-debt buyout (wai...</span></a></li><li><a href="#m71"><span class="trnk">071</span><span class="tname">Universal student-debt cancellation...</span></a></li><li><a href="#m72"><span class="trnk">072</span><span class="tname">Free public transportation in major...</span></a></li><li><a href="#m73"><span class="trnk">073</span><span class="tname">Free universal contraception + IVF ...</span></a></li><li><a href="#m74"><span class="trnk">074</span><span class="tname">Free or subsidized childcare for si...</span></a></li><li><a href="#m75"><span class="trnk">075</span><span class="tname">Universal food stamps (SNAP expansi...</span></a></li><li><a href="#m76"><span class="trnk">076</span><span class="tname">Free school-supplies + uniform prog...</span></a></li><li><a href="#m77"><span class="trnk">077</span><span class="tname">Free universal menstrual products i...</span></a></li><li><a href="#m78"><span class="trnk">078</span><span class="tname">Universal home energy assistance (L...</span></a></li><li><a href="#m79"><span class="trnk">079</span><span class="tname">Free public parks + urban green-spa...</span></a></li><li><a href="#m80"><span class="trnk">080</span><span class="tname">Urban heat-island mitigation (cool ...</span></a></li><li><a href="#m81"><span class="trnk">081</span><span class="tname">Air-pollution reduction mandates (P...</span></a></li><li><a href="#m82"><span class="trnk">082</span><span class="tname">Lead-pipe replacement universal pro...</span></a></li><li><a href="#m83"><span class="trnk">083</span><span class="tname">Universal free community-college as...</span></a></li><li><a href="#m84"><span class="trnk">084</span><span class="tname">Apprenticeship-job-matching platfor...</span></a></li><li><a href="#m85"><span class="trnk">085</span><span class="tname">Free universal legal aid for housin...</span></a></li><li><a href="#m86"><span class="trnk">086</span><span class="tname">Free tax-preparation + automatic ta...</span></a></li><li><a href="#m87"><span class="trnk">087</span><span class="tname">Auto-enrollment in all benefit prog...</span></a></li><li><a href="#m88"><span class="trnk">088</span><span class="tname">Universal child trust fund / baby b...</span></a></li><li><a href="#m89"><span class="trnk">089</span><span class="tname">Free universal preventive dental ca...</span></a></li><li><a href="#m90"><span class="trnk">090</span><span class="tname">Free universal vision care + glasse...</span></a></li><li><a href="#m91"><span class="trnk">091</span><span class="tname">Free universal hearing aids (age 65...</span></a></li><li><a href="#m92"><span class="trnk">092</span><span class="tname">Universal broadband-subsidized lapt...</span></a></li><li><a href="#m93"><span class="trnk">093</span><span class="tname">Free tutoring (K-12 after-school pr...</span></a></li><li><a href="#m94"><span class="trnk">094</span><span class="tname">Universal sports / arts / music pro...</span></a></li><li><a href="#m95"><span class="trnk">095</span><span class="tname">AI-powered personalized after-schoo...</span></a></li><li><a href="#m96"><span class="trnk">096</span><span class="tname">Free universal home-visiting nurse ...</span></a></li><li><a href="#m97"><span class="trnk">097</span><span class="tname">Universal paid bereavement leave (8...</span></a></li><li><a href="#m98"><span class="trnk">098</span><span class="tname">Universal compassionate-care leave ...</span></a></li><li><a href="#m99"><span class="trnk">099</span><span class="tname">Universal &#x27;medical-financial-counse...</span></a></li><li><a href="#m100"><span class="trnk">100</span><span class="tname">Universal micro-grants for communit...</span></a></li>
+      </ol>
+    </aside>
+    <main>
+      
+  <article class="sec" id="01">
+    <h2 class="sttl">01. Tier 1A: Highest-Impact, Lowest-Effort (1-9)</h2>
+    
+    <section class="m" id="m1">
+      <header class="mh">
+        <span class="rnk">001</span>
+        <h2 class="ttl">Means restriction: pesticide bans (WHO best-buy)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">50,000 to 150,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $20.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$125</div></div>
+      </div>
+      <p class="blurb">Regulatory bans on highly hazardous pesticides in countries with high rural suicide rates (China, India, South Korea, Sri Lanka). 30-50% reduction in method-specific suicide documented in Sri Lanka after paraquat ban; estimated 150k lives/year globally at scale. Cost = regulatory + enforcement.</p>
+      <p class="src">Source: Mann 2005 systematic review; WHO 2019 best-buy</p>
+    </section>
+
+    <section class="m" id="m2">
+      <header class="mh">
+        <span class="rnk">002</span>
+        <h2 class="ttl">Means restriction: firearm permit-to-purchase (PTP) laws</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">8,000 to 25,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$20.0M to $60.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$2K</div></div>
+      </div>
+      <p class="blurb">Restore or expand permit-to-purchase handgun laws. CT PTP law associated with 15.4% drop in firearm suicides (synthetic control, 1981-2012). ERPO extreme-risk protection orders: 1 suicide averted per ~10-11 firearm seizures. Cost = legal infrastructure.</p>
+      <p class="src">Source: Crifasi 2015 (PMC4566551); Kivisto Phalen; Studdert 2020</p>
+    </section>
+
+    <section class="m" id="m3">
+      <header class="mh">
+        <span class="rnk">003</span>
+        <h2 class="ttl">Means restriction: bridge barriers and jumping deterrents</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $80.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$50K</div></div>
+      </div>
+      <p class="blurb">Physical barriers on hotspot bridges (Golden Gate, Bloor Viaduct). Bloor Viaduct barrier cut suicides 80% at that site. Replicable at known hotspot sites. Cost = construction; very high DALY/$.</p>
+      <p class="src">Source: Mann 2005 systematic review; multiple site studies</p>
+    </section>
+
+    <section class="m" id="m4">
+      <header class="mh">
+        <span class="rnk">004</span>
+        <h2 class="ttl">Means restriction: blister-pack analgesics (paracetamol)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.0M to $5.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$923</div></div>
+      </div>
+      <p class="blurb">Limit pack sizes of paracetamol and other lethal OTC analgesics. UK 1998 legislation cut paracetamol overdose deaths by 50% in 4 years. Cheap, fast. Cost = packaging reform.</p>
+      <p class="src">Source: Mann 2005; UK legislation 1998</p>
+    </section>
+
+    <section class="m" id="m5">
+      <header class="mh">
+        <span class="rnk">005</span>
+        <h2 class="ttl">Safety Planning Intervention (SPI+) at ED discharge</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">6,000 to 15,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $40.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$2K</div></div>
+      </div>
+      <p class="blurb">Brief structured safety plan + structured phone follow-up (2+ calls). SPI+ cohort: 45% fewer suicidal behaviors over 6 months (OR 0.56), 2x outpatient mental health visits. Adoptable in any ED. Cost = clinician time, training.</p>
+      <p class="src">Source: Stanley &amp; Brown 2018 JAMA Psychiatry</p>
+    </section>
+
+    <section class="m" id="m6">
+      <header class="mh">
+        <span class="rnk">006</span>
+        <h2 class="ttl">988 / 3-digit crisis line expansion (US 988, UK Samaritans, Lifeline AU)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">3,000 to 10,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $200.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$19K</div></div>
+      </div>
+      <p class="blurb">Three-digit memorable number + 24/7 trained crisis counselor coverage. ASIST-trained counselors make callers significantly less suicidal (OR 1.74). 988 launched July 2022 in US. Cost = telephony + staffing.</p>
+      <p class="src">Source: Gould 2007-2013 silent monitoring; Hoffman 2022</p>
+    </section>
+
+    <section class="m" id="m7">
+      <header class="mh">
+        <span class="rnk">007</span>
+        <h2 class="ttl">Youth Aware of Mental Health (YAM) school program (ages 13-17)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 8,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $20.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$2K</div></div>
+      </div>
+      <p class="blurb">Universal school-based mental-health awareness + role-play. SEYLE RCT: OR 0.45 for incident suicide attempts at 12mo vs control. Effective for adolescents, age 15-29 highest-burden group. Cost = curriculum + facilitators.</p>
+      <p class="src">Source: Wasserman 2015 SEYLE RCT (Lancet); meta-analysis 2022</p>
+    </section>
+
+    <section class="m" id="m8">
+      <header class="mh">
+        <span class="rnk">008</span>
+        <h2 class="ttl">Lethal means counseling (brief in-clinic firearm safety conversation)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 8,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.0M to $5.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$600</div></div>
+      </div>
+      <p class="blurb">5-minute physician-led conversation with at-risk patient and family about temporarily removing firearms. ~1 in 10-11 ERPO seizures averts a suicide. Cost = clinician training.</p>
+      <p class="src">Source: Mann 2005; Harvard Means Matter; Runyan 2024</p>
+    </section>
+
+    <section class="m" id="m9">
+      <header class="mh">
+        <span class="rnk">009</span>
+        <h2 class="ttl">AI chatbot CBT for depression (Therabot / Woebot / Wysa / Earkick)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">5,000 to 30,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$314</div></div>
+      </div>
+      <p class="blurb">Fine-tuned generative-AI therapy chatbot for MDD/GAD/CHR-FED. Therabot RCT: d=0.845-0.903 for MDD vs WLC. CBT-chatbot meta-analysis 29 trials, g=-0.55 depression. 24/7, scalable, zero waitlist. Cost = inference + dev.</p>
+      <p class="src">Source: NEJM AI Therabot RCT 2025 (d=0.84 MDD); JMIR CBT chatbots 2026 (g=-0.55)</p>
+    </section>
+  </article>
+
+  <article class="sec" id="02">
+    <h2 class="sttl">02. Tier 1B: Foundational Psychotherapy and Clinical Care (10-18)</h2>
+    
+    <section class="m" id="m10">
+      <header class="mh">
+        <span class="rnk">010</span>
+        <h2 class="ttl">Dialectical Behavior Therapy (DBT) for borderline personality disorder</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$20.0M to $80.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$15K</div></div>
+      </div>
+      <p class="blurb">DBT vs CTBE: half the suicide attempts (HR 2.66, NNT 4.24). 5-RCT meta: Hedges g=-0.62 for parasuicidal acts. Cost = 1yr weekly individual + group skills.</p>
+      <p class="src">Source: Linehan 2006 JAMA Psychiatry; Panos 2014 meta-analysis</p>
+    </section>
+
+    <section class="m" id="m11">
+      <header class="mh">
+        <span class="rnk">011</span>
+        <h2 class="ttl">Caring Contacts post-crisis text/email outreach</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500K to $3.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$538</div></div>
+      </div>
+      <p class="blurb">Personalized non-demanding text/email messages at 3 days, weekly, monthly, birthdays. Complements SPI+. Cost = messaging platform + content.</p>
+      <p class="src">Source: SPARC trial 2024 (NCT04893447); VA Compassionate Contacts</p>
+    </section>
+
+    <section class="m" id="m12">
+      <header class="mh">
+        <span class="rnk">012</span>
+        <h2 class="ttl">Brief Intervention and Contact (BIC) post-suicide-attempt</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $20.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$3K</div></div>
+      </div>
+      <p class="blurb">9-session telephone/home-visit outreach after suicide attempt. WHO/BIRPI trial in 5 nations cut deaths ~50% in intervention group. Cost = outreach workers.</p>
+      <p class="src">Source: Fleischmann 2008 WHO multicentre; multiple LMIC studies</p>
+    </section>
+
+    <section class="m" id="m13">
+      <header class="mh">
+        <span class="rnk">013</span>
+        <h2 class="ttl">Gatekeeper training (QPR, ASIST, safeTALK) for adults in contact with youth</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $25.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$4K</div></div>
+      </div>
+      <p class="blurb">Train teachers, coaches, clergy, primary care to recognize warning signs and refer. ASIST counselors reduce caller suicidal state (OR 1.74). QPR modest effect vs YAM. Cost = training programs.</p>
+      <p class="src">Source: Wasserman 2015 (QPR); Gould ASIST studies</p>
+    </section>
+
+    <section class="m" id="m14">
+      <header class="mh">
+        <span class="rnk">014</span>
+        <h2 class="ttl">Universal screening for suicide risk in primary care + ED</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">3,000 to 8,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$2.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$1K</div></div>
+      </div>
+      <p class="blurb">PHQ-9 + item 9 / C-SSRS / ASQ at every primary care &amp; ED visit. ~3-5x identification vs unaided. Cost = screening instrument + workflow.</p>
+      <p class="src">Source: Botchway 2022; Dunlap 2019; US Joint Commission NPSG 15</p>
+    </section>
+
+    <section class="m" id="m15">
+      <header class="mh">
+        <span class="rnk">015</span>
+        <h2 class="ttl">AI mood/passive-sensing monitoring for high-risk patients (smartphone + wearables)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 8,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$2.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$1K</div></div>
+      </div>
+      <p class="blurb">Smartphone keyboard, sleep, location, voice signals flag depression/suicidality 2-4 weeks pre-crisis. Sends alert to clinician. Continuous, low-friction. Cost = app + integration.</p>
+      <p class="src">Source: NEJM Catalyst 2024; multiple 2024-2026 pilot RCTs</p>
+    </section>
+
+    <section class="m" id="m16">
+      <header class="mh">
+        <span class="rnk">016</span>
+        <h2 class="ttl">Universal anti-suicide public messaging campaigns (Papageno effect)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$2.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$2K</div></div>
+      </div>
+      <p class="blurb">Responsible media + pro-help-seeking ads in mass media. Reduces suicide rates in the messaging catchment. Cost = media buy + content.</p>
+      <p class="src">Source: Niederkrotenthaler 2010-2024 meta-analyses</p>
+    </section>
+
+    <section class="m" id="m17">
+      <header class="mh">
+        <span class="rnk">017</span>
+        <h2 class="ttl">Cognitive Behavioral Therapy (CBT) for suicide attempters</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 7,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$30.0M to $120.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$17K</div></div>
+      </div>
+      <p class="blurb">Manualized CBT for adults after attempt: ~50% reduction in re-attempt. CBT is gold standard psychotherapy. Cost = therapist time.</p>
+      <p class="src">Source: Rudd 2015; Brown 2005; multiple meta-analyses</p>
+    </section>
+
+    <section class="m" id="m18">
+      <header class="mh">
+        <span class="rnk">018</span>
+        <h2 class="ttl">Lithium maintenance in bipolar disorder</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">800 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $30.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$9K</div></div>
+      </div>
+      <p class="blurb">Lithium vs placebo: OR 0.13 suicide reduction, OR 0.38 all-cause mortality. ~50% reduction in suicide attempts in bipolar. Cost = drug + monitoring.</p>
+      <p class="src">Source: Cipriani 2013 BMJ meta-analysis (OR 0.13); Tondo 2001; Cipriani 2024 update</p>
+    </section>
+  </article>
+
+  <article class="sec" id="03">
+    <h2 class="sttl">03. Tier 1C: Acute Pharmacologic and Crisis Care (19-27)</h2>
+    
+    <section class="m" id="m19">
+      <header class="mh">
+        <span class="rnk">019</span>
+        <h2 class="ttl">Esketamine (Spravato) for treatment-resistant depression / acute suicidal ideation</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">600 to 2,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$30.0M to $120.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$48K</div></div>
+      </div>
+      <p class="blurb">84mg intranasal esketamine twice weekly under REMS. Rapid MADRS reduction 24h (LSMD -3.9). FDA approved for TRD + active SI. Cost = drug + monitored clinic time.</p>
+      <p class="src">Source: ASPIRE I/II Phase 3 (Canuso 2018; Fu 2020)</p>
+    </section>
+
+    <section class="m" id="m20">
+      <header class="mh">
+        <span class="rnk">020</span>
+        <h2 class="ttl">Collaborative Assessment and Management of Suicidality (CAMS)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$15.0M to $60.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$10K</div></div>
+      </div>
+      <p class="blurb">CAMS-focused outpatient care vs TAU cuts suicidal ideation, increases treatment retention. Adaptable to telehealth. Cost = clinician training.</p>
+      <p class="src">Source: Jobes 2012-2024; multiple comparative trials</p>
+    </section>
+
+    <section class="m" id="m21">
+      <header class="mh">
+        <span class="rnk">021</span>
+        <h2 class="ttl">Cognitive Therapy for Suicide Prevention (CT-SP) / Wenzel</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$20.0M to $80.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$15K</div></div>
+      </div>
+      <p class="blurb">Brief cognitive therapy for suicide prevention, 10 sessions over 6 months. Cuts re-attempt ~50%. Cost = training.</p>
+      <p class="src">Source: Wenzel 2009-2018 RCTs</p>
+    </section>
+
+    <section class="m" id="m22">
+      <header class="mh">
+        <span class="rnk">022</span>
+        <h2 class="ttl">Primary-care collaborative care for depression (IMPACT, PATH)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">3,000 to 10,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $200.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$19K</div></div>
+      </div>
+      <p class="blurb">Stepped collaborative care with care manager + psychiatrist consult. Reduces suicidal ideation in late-life depression by ~50%. Cost = staff + telepsychiatry.</p>
+      <p class="src">Source: IMPACT trial Unutzer 2002 JAMA; multiple meta-analyses</p>
+    </section>
+
+    <section class="m" id="m23">
+      <header class="mh">
+        <span class="rnk">023</span>
+        <h2 class="ttl">Esketamine + SSRI/SNRI augmentation for severe depression</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$20.0M to $80.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$50K</div></div>
+      </div>
+      <p class="blurb">Combined treatment resistant depression pathway. Cost = drug + REMS clinic.</p>
+      <p class="src">Source: Popova 2019; Daly 2019; ASPIRE II</p>
+    </section>
+
+    <section class="m" id="m24">
+      <header class="mh">
+        <span class="rnk">024</span>
+        <h2 class="ttl">NHS-style Improving Access to Psychological Therapies (IAPT) at scale</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">5,000 to 20,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $800.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$40K</div></div>
+      </div>
+      <p class="blurb">UK stepped-care model: self-help, guided self-help, low-intensity CBT, high-intensity CBT. ~50% recovery rate, 65% reliable improvement. Cost = training pipeline + IAPT digital.</p>
+      <p class="src">Source: IAPT evaluation 2008-2024 (Clark)</p>
+    </section>
+
+    <section class="m" id="m25">
+      <header class="mh">
+        <span class="rnk">025</span>
+        <h2 class="ttl">988 SMS/text crisis service expansion</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 4,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $25.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$6K</div></div>
+      </div>
+      <p class="blurb">Text-based crisis line for digital-native population. Adolescent preferred channel. Cost = text platform + counselors.</p>
+      <p class="src">Source: Crisis Text Line data; Gould 2018</p>
+    </section>
+
+    <section class="m" id="m26">
+      <header class="mh">
+        <span class="rnk">026</span>
+        <h2 class="ttl">AI companion for 24/7 non-crisis loneliness support (Woebot, Earkick, Replika)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 10,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500K to $5.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$458</div></div>
+      </div>
+      <p class="blurb">General emotional-support AI app, offloads demand from crisis services. Daily engagement reduces PHQ-9 by 30-40%. Cost = inference + app dev.</p>
+      <p class="src">Source: Fitzpatrick 2017; NEJM AI 2025; multiple 2025 RCTs</p>
+    </section>
+
+    <section class="m" id="m27">
+      <header class="mh">
+        <span class="rnk">027</span>
+        <h2 class="ttl">Crisis residential stabilization (sub-acute, 24h supervised, &lt;14 days)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 2,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$30.0M to $120.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$60K</div></div>
+      </div>
+      <p class="blurb">Short-stay stabilization facility: &lt;14 days, peer support + clinician. Avoids acute psychiatric admission for ~50% of patients. Cost = real estate + staff.</p>
+      <p class="src">Source: Boudreaux 2016; multiple descriptive studies</p>
+    </section>
+  </article>
+
+  <article class="sec" id="04">
+    <h2 class="sttl">04. Tier 1D: System-Level Architecture (28-36)</h2>
+    
+    <section class="m" id="m28">
+      <header class="mh">
+        <span class="rnk">028</span>
+        <h2 class="ttl">Peer support specialists with lived experience in ED / outpatient</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 4,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $40.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$10K</div></div>
+      </div>
+      <p class="blurb">Hire people with lived experience of suicidality into ED + outpatient teams. Improves engagement, reduces re-attempt. Cost = salary + training.</p>
+      <p class="src">Source: Pitt 2013; VA peer-support studies</p>
+    </section>
+
+    <section class="m" id="m29">
+      <header class="mh">
+        <span class="rnk">029</span>
+        <h2 class="ttl">Mental health parity enforcement (insurance coverage mandates)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">5,000 to 25,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $30.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$1K</div></div>
+      </div>
+      <p class="blurb">Mandate equal coverage for mental vs physical health. Unlocks latent capacity. Cost = legal + enforcement (recouped).</p>
+      <p class="src">Source: US MHPAEA 2008; Trivedi 2011 Health Affairs</p>
+    </section>
+
+    <section class="m" id="m30">
+      <header class="mh">
+        <span class="rnk">030</span>
+        <h2 class="ttl">Tele-psychiatry for rural / frontier regions</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 8,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $50.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$6K</div></div>
+      </div>
+      <p class="blurb">Video / phone psychiatric evaluation + therapy in regions with no psychiatrists. Cost = devices + broadband + reimbursement.</p>
+      <p class="src">Source: Multiple 2020-2025 systematic reviews</p>
+    </section>
+
+    <section class="m" id="m31">
+      <header class="mh">
+        <span class="rnk">031</span>
+        <h2 class="ttl">National strategic plan for suicide prevention (state-level, multi-sector)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">5,000 to 20,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $30.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$1K</div></div>
+      </div>
+      <p class="blurb">Whole-of-government plan: surveillance, means, training, treatment. Binds agencies together. Cost = coordination + analytics.</p>
+      <p class="src">Source: US National Strategy 2024; AFSP state grants</p>
+    </section>
+
+    <section class="m" id="m32">
+      <header class="mh">
+        <span class="rnk">032</span>
+        <h2 class="ttl">Veteran suicide prevention (VA REACH VET, firearm safety, opioid management)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$20.0M to $60.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$40K</div></div>
+      </div>
+      <p class="blurb">Predictive analytics + outreach + lethal means counseling. VA suicide rate dropped vs civilian peer for first time in decades. Cost = staff + data.</p>
+      <p class="src">Source: VA REACH VET 2017-2024</p>
+    </section>
+
+    <section class="m" id="m33">
+      <header class="mh">
+        <span class="rnk">033</span>
+        <h2 class="ttl">Indigenous / Aboriginal community-led suicide prevention (culture-as-treatment)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $30.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$19K</div></div>
+      </div>
+      <p class="blurb">Culture-as-healing programs (language, elders, land). Most effective for Indigenous adolescents, the world&#x27;s highest-rate subgroup. Cost = community grants.</p>
+      <p class="src">Source: O&#x27;Keefe 2016-2024; Australia Aboriginal-led programs</p>
+    </section>
+
+    <section class="m" id="m34">
+      <header class="mh">
+        <span class="rnk">034</span>
+        <h2 class="ttl">Aboriginal / First Nations community gatekeeper training</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.0M to $5.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$5K</div></div>
+      </div>
+      <p class="blurb">Cultural adaptation of ASIST / QPR. Cost = train-the-trainer.</p>
+      <p class="src">Source: Australian models; Canadian Inuit Tapiriit Kanatami</p>
+    </section>
+
+    <section class="m" id="m35">
+      <header class="mh">
+        <span class="rnk">035</span>
+        <h2 class="ttl">Out-of-home reconnection programs for LGBTQ+ youth rejected by family</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 2,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $30.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$12K</div></div>
+      </div>
+      <p class="blurb">Family acceptance cuts LGBTQ+ youth suicide attempts ~8x. Alternative: Trevors Project-style housing. Cost = family therapy + housing.</p>
+      <p class="src">Source: Family Acceptance Project 2009-2024</p>
+    </section>
+
+    <section class="m" id="m36">
+      <header class="mh">
+        <span class="rnk">036</span>
+        <h2 class="ttl">Family Acceptance Project training for parents of LGBTQ+ youth</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$2.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$7K</div></div>
+      </div>
+      <p class="blurb">Culturally-competent family intervention. Lowers suicide attempts, depression, substance abuse. Cost = training providers.</p>
+      <p class="src">Source: Ryan 2009-2024</p>
+    </section>
+  </article>
+
+  <article class="sec" id="05">
+    <h2 class="sttl">05. Tier 2A: Means, Method, and Lethal-Means Infrastructure (37-45)</h2>
+    
+    <section class="m" id="m37">
+      <header class="mh">
+        <span class="rnk">037</span>
+        <h2 class="ttl">Zero Suicide Initiative (health-system framework)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">3,000 to 10,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $30.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$3K</div></div>
+      </div>
+      <p class="blurb">Comprehensive health-system quality improvement: screen, treat, follow-up, means, lethal means, transition of care. Adopted by 1700+ US orgs. Cost = QI infrastructure.</p>
+      <p class="src">Source: Zero Suicide Institute 2014-2024</p>
+    </section>
+
+    <section class="m" id="m38">
+      <header class="mh">
+        <span class="rnk">038</span>
+        <h2 class="ttl">Aftercare / case management after psychiatric hospitalization (post-discharge outreach)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 7,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$20.0M to $80.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$11K</div></div>
+      </div>
+      <p class="blurb">Active outreach within 7 days of psychiatric discharge. Cuts 30-day re-attempt ~30%. Cost = case manager salary.</p>
+      <p class="src">Source: VA suicide prevention continuum 2024; multiple trials</p>
+    </section>
+
+    <section class="m" id="m39">
+      <header class="mh">
+        <span class="rnk">039</span>
+        <h2 class="ttl">Assertive Community Treatment (ACT) for severe mental illness</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 2,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$30.0M to $120.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$60K</div></div>
+      </div>
+      <p class="blurb">Multi-disciplinary team delivers wraparound care in the community. Reduces suicide attempt rate in SMI ~50%. Cost = team + travel.</p>
+      <p class="src">Source: Multiple trials; Bond 2001 review</p>
+    </section>
+
+    <section class="m" id="m40">
+      <header class="mh">
+        <span class="rnk">040</span>
+        <h2 class="ttl">Mental health first aid (MHFA) public training</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$3.0M to $15.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$3K</div></div>
+      </div>
+      <p class="blurb">Train general public in first-aid style mental-health response. Improves recognition, referral. Cost = training programs.</p>
+      <p class="src">Source: Hadlaczky 2014 systematic review; Kitchener &amp; Jorm 2002</p>
+    </section>
+
+    <section class="m" id="m41">
+      <header class="mh">
+        <span class="rnk">041</span>
+        <h2 class="ttl">AI-screened social media (passive outreach, 24/7)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$3K</div></div>
+      </div>
+      <p class="blurb">ML models scan posts for crisis language, alert safety team who DM outreach. Saves lives at scale. Cost = platform + team.</p>
+      <p class="src">Source: Facebook AI suicide-detection 2017-2024; Twitter (X) similar</p>
+    </section>
+
+    <section class="m" id="m42">
+      <header class="mh">
+        <span class="rnk">042</span>
+        <h2 class="ttl">Anti-bullying school programs (Olweus, KiVa)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$20.0M to $80.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$13K</div></div>
+      </div>
+      <p class="blurb">School-wide anti-bullying. Bullying is causal for ~10% adolescent suicides. Cost = curriculum + training.</p>
+      <p class="src">Source: Farrington 2011; KiVa RCT 2010-2024</p>
+    </section>
+
+    <section class="m" id="m43">
+      <header class="mh">
+        <span class="rnk">043</span>
+        <h2 class="ttl">Sleep hygiene / circadian intervention (CBT-I) for depressed teens</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$2.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$3K</div></div>
+      </div>
+      <p class="blurb">Treat insomnia in adolescents. Insomnia doubles suicide risk. CBT-I is first-line. Cost = clinician training.</p>
+      <p class="src">Source: Sleep Foundation 2024; multiple 2024 RCTs</p>
+    </section>
+
+    <section class="m" id="m44">
+      <header class="mh">
+        <span class="rnk">044</span>
+        <h2 class="ttl">School psychologist ratio mandate (1:250 / 1:500)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $400.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$83K</div></div>
+      </div>
+      <p class="blurb">Lower ratio = early identification. US current 1:1200 average. Cost = salary pipeline.</p>
+      <p class="src">Source: NASP recommendations; Kutcher 2015</p>
+    </section>
+
+    <section class="m" id="m45">
+      <header class="mh">
+        <span class="rnk">045</span>
+        <h2 class="ttl">Adolescent depression universal screening in schools (PHQ-A)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 2,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $20.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$8K</div></div>
+      </div>
+      <p class="blurb">Universal annual PHQ-A for all 12-18yr. Cost = screening + treatment pathway.</p>
+      <p class="src">Source: USUSP 2014; multiple 2020 trials</p>
+    </section>
+  </article>
+
+  <article class="sec" id="06">
+    <h2 class="sttl">06. Tier 2B: AI in Mental Health (46-54)</h2>
+    
+    <section class="m" id="m46">
+      <header class="mh">
+        <span class="rnk">046</span>
+        <h2 class="ttl">Postpartum depression screening (EPDS) + treatment</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $20.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$14K</div></div>
+      </div>
+      <p class="blurb">Universal screening at well-child visits 0-12 mo. 10-15% postpartum depression. Cost = screening + treatment.</p>
+      <p class="src">Source: ACOG 2018; Cox 1987 EPDS</p>
+    </section>
+
+    <section class="m" id="m47">
+      <header class="mh">
+        <span class="rnk">047</span>
+        <h2 class="ttl">Perinatal mental health home visiting (Nurse-Family Partnership)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $40.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$42K</div></div>
+      </div>
+      <p class="blurb">Trained nurse visits low-income first-time mothers. 30-year follow-up: 80% reduction in maternal suicide, child maltreatment cut 48%. Cost = nurse salary.</p>
+      <p class="src">Source: Olds 1986-2024 NFP RCT</p>
+    </section>
+
+    <section class="m" id="m48">
+      <header class="mh">
+        <span class="rnk">048</span>
+        <h2 class="ttl">Esketamine single-dose emergency rescue for suicidal ED patient</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $20.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$21K</div></div>
+      </div>
+      <p class="blurb">In-ED or in-psychiatric unit single dose to stabilize acute SI while long-term therapy arranged. Cost = drug + monitoring.</p>
+      <p class="src">Source: Canuso 2018 ASPIRE I/II</p>
+    </section>
+
+    <section class="m" id="m49">
+      <header class="mh">
+        <span class="rnk">049</span>
+        <h2 class="ttl">AI voice biomarker screening for depression / Parkinson&#x27;s / early dementia (Kintsugi, Ellipsis, Cordio)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$3K</div></div>
+      </div>
+      <p class="blurb">15-second voice sample detects depression severity via acoustic markers. Passive, smartphone-native. Cost = app + screening.</p>
+      <p class="src">Source: Kintsugi FDA 2022; multiple 2024-2026 clinical validations</p>
+    </section>
+
+    <section class="m" id="m50">
+      <header class="mh">
+        <span class="rnk">050</span>
+        <h2 class="ttl">Clozapine for treatment-resistant schizophrenia (suicide reduction)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $40.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$38K</div></div>
+      </div>
+      <p class="blurb">Clozapine uniquely reduces suicide in schizophrenia (~85% drop) vs other antipsychotics. Cost = drug + ANC monitoring.</p>
+      <p class="src">Source: Meltzer 2003; multiple meta-analyses</p>
+    </section>
+
+    <section class="m" id="m51">
+      <header class="mh">
+        <span class="rnk">051</span>
+        <h2 class="ttl">Universal Basic Income (UBI) pilot scaled to national - cash cures poverty cures death</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">5,000 to 30,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500.0M to $5.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$157K</div></div>
+      </div>
+      <p class="blurb">$500-$1000/mo unconditional cash to all citizens. Finland Kela pilot improved mental health (PHQ score reduction). Cost = budget.</p>
+      <p class="src">Source: GiveDirectly Kenya 2017-ongoing; Finland Kela 2017-2018</p>
+    </section>
+
+    <section class="m" id="m52">
+      <header class="mh">
+        <span class="rnk">052</span>
+        <h2 class="ttl">Conditional Cash Transfer for at-risk families (Mexican Oportunidades model)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 10,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$92K</div></div>
+      </div>
+      <p class="blurb">Cash to poor mothers conditional on school/health visits. Reduces depression + suicide rate, especially adolescents. Cost = budget.</p>
+      <p class="src">Source: Oportunidades (now Prospera) 1997-2019 evaluation</p>
+    </section>
+
+    <section class="m" id="m53">
+      <header class="mh">
+        <span class="rnk">053</span>
+        <h2 class="ttl">Cash transfers targeted at youth (Kenya GiveDirectly lump-sum)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$92K</div></div>
+      </div>
+      <p class="blurb">Direct $500-$1000 to 18-25yr in high-suicide-rate communities. Lump-sum &gt; monthly for some outcomes. Cost = direct payment.</p>
+      <p class="src">Source: GiveDirectly Kenya 2017-2024</p>
+    </section>
+
+    <section class="m" id="m54">
+      <header class="mh">
+        <span class="rnk">054</span>
+        <h2 class="ttl">Free public college tuition + universal student stipend</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 8,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500.0M to $5.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$579K</div></div>
+      </div>
+      <p class="blurb">Tuition-free higher ed + living stipend eliminates student debt-suicide link. Cost = budget.</p>
+      <p class="src">Source: Norway; Scotland; Fulbright studies</p>
+    </section>
+  </article>
+
+  <article class="sec" id="07">
+    <h2 class="sttl">07. Tier 2C: Targeted Populations - Youth, Veteran, Indigenous, LGBTQ+ (55-63)</h2>
+    
+    <section class="m" id="m55">
+      <header class="mh">
+        <span class="rnk">055</span>
+        <h2 class="ttl">Free public trade / vocational training (18 month coding, plumbing, nursing)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,500 to 7,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $1.50B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$200K</div></div>
+      </div>
+      <p class="blurb">No-cost career-track training for school-leavers without degree. Reduces unemployment-suicide. Cost = training infrastructure.</p>
+      <p class="src">Source: Perry 2003-2018; European apprenticeship data</p>
+    </section>
+
+    <section class="m" id="m56">
+      <header class="mh">
+        <span class="rnk">056</span>
+        <h2 class="ttl">Job-guarantee program for the long-term unemployed (employer of last resort)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 10,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.00B to $5.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$500K</div></div>
+      </div>
+      <p class="blurb">Government pays living wage for community work (parks, libraries, care). Each 1pp unemployment drop yields about 1% suicide drop. Cost = wages.</p>
+      <p class="src">Source: MMT job guarantee proposal; Eurostat 2020</p>
+    </section>
+
+    <section class="m" id="m57">
+      <header class="mh">
+        <span class="rnk">057</span>
+        <h2 class="ttl">Living-wage mandate + automatic minimum-wage indexation to median wage</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">3,000 to 15,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $50.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$3K</div></div>
+      </div>
+      <p class="blurb">Boost minimum wage to 60% of median. Reduces financial stress, depression, suicide. Cost = private-sector.</p>
+      <p class="src">Source: US state min-wage studies 2010-2024</p>
+    </section>
+
+    <section class="m" id="m58">
+      <header class="mh">
+        <span class="rnk">058</span>
+        <h2 class="ttl">Free universal childcare (0-5yr public daycare)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$171K</div></div>
+      </div>
+      <p class="blurb">Free daycare cuts maternal-depression suicide, allows women to remain in workforce. Cost = infrastructure + staff.</p>
+      <p class="src">Source: Quebec universal childcare 1997-2004 evaluation</p>
+    </section>
+
+    <section class="m" id="m59">
+      <header class="mh">
+        <span class="rnk">059</span>
+        <h2 class="ttl">Universal paid family leave (6 months, both parents)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$343K</div></div>
+      </div>
+      <p class="blurb">6-month paid leave reduces postpartum depression, abuse, suicide. Cost = insurance pool.</p>
+      <p class="src">Source: Sweden 1974; OECD studies</p>
+    </section>
+
+    <section class="m" id="m60">
+      <header class="mh">
+        <span class="rnk">060</span>
+        <h2 class="ttl">Universal paid sick leave (10 days/yr)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $300.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$100K</div></div>
+      </div>
+      <p class="blurb">Paid sick days reduce working-poor stress. Cost = employer mandate.</p>
+      <p class="src">Source: US state paid sick leave studies 2010-2024</p>
+    </section>
+
+    <section class="m" id="m61">
+      <header class="mh">
+        <span class="rnk">061</span>
+        <h2 class="ttl">Universal pre-K (3-4yr public preschool)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $1.50B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$283K</div></div>
+      </div>
+      <p class="blurb">High-quality pre-K for all. ROI 7-10% per dollar via lifetime outcomes. Reduces adolescent suicide. Cost = infrastructure + staff.</p>
+      <p class="src">Source: Perry Preschool Project 2003; Heckman 2006</p>
+    </section>
+
+    <section class="m" id="m62">
+      <header class="mh">
+        <span class="rnk">062</span>
+        <h2 class="ttl">Free universal school meals (breakfast + lunch)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $300.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$100K</div></div>
+      </div>
+      <p class="blurb">Universal school meals cut food insecurity + teen depression. Cost = food + staff.</p>
+      <p class="src">Source: Sweden universal free school meals 1970s</p>
+    </section>
+
+    <section class="m" id="m63">
+      <header class="mh">
+        <span class="rnk">063</span>
+        <h2 class="ttl">Public broadband as utility (fiber to every home, $20/mo)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $2.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$367K</div></div>
+      </div>
+      <p class="blurb">Universal broadband enables tele-mental-health + reduces rural isolation. Cost = infrastructure.</p>
+      <p class="src">Source: Estonia, Chattanooga municipal broadband</p>
+    </section>
+  </article>
+
+  <article class="sec" id="08">
+    <h2 class="sttl">08. Tier 3A: School-Based and Family-Based Prevention (64-72)</h2>
+    
+    <section class="m" id="m64">
+      <header class="mh">
+        <span class="rnk">064</span>
+        <h2 class="ttl">Public mental health EHR open-API integration (FHIR) + 1-click &#x27;record-only-on-consent&#x27; data</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $100.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$18K</div></div>
+      </div>
+      <p class="blurb">FHIR-enabled mental-health records with patient-controlled privacy. Reduces re-traumatization. Cost = standards + vendor contracts.</p>
+      <p class="src">Source: US ONC Cures Act 2024; Argonaut project</p>
+    </section>
+
+    <section class="m" id="m65">
+      <header class="mh">
+        <span class="rnk">065</span>
+        <h2 class="ttl">Affordable housing trust fund (5% regional, mixed-income zoning)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">2,000 to 10,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500.0M to $5.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$458K</div></div>
+      </div>
+      <p class="blurb">Mixed-income public housing + housing voucher. Homelessness = 9x suicide risk. Cost = capital.</p>
+      <p class="src">Source: Singapore HDB; Vienna social housing</p>
+    </section>
+
+    <section class="m" id="m66">
+      <header class="mh">
+        <span class="rnk">066</span>
+        <h2 class="ttl">Housing First for chronic homelessness (Pathways model)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $300.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$100K</div></div>
+      </div>
+      <p class="blurb">No-conditions permanent housing + wraparound services. Cuts chronic homeless suicide ~80%. Cost = housing + support.</p>
+      <p class="src">Source: Pathways to Housing 1992-2024; Tsemberis</p>
+    </section>
+
+    <section class="m" id="m67">
+      <header class="mh">
+        <span class="rnk">067</span>
+        <h2 class="ttl">Section 8 / housing choice vouchers, fully funded (eliminates waitlist)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500.0M to $5.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$917K</div></div>
+      </div>
+      <p class="blurb">Universal housing choice voucher eliminates homelessness + cuts family suicide. Cost = HUD budget.</p>
+      <p class="src">Source: US HUD 2023 waitlist data</p>
+    </section>
+
+    <section class="m" id="m68">
+      <header class="mh">
+        <span class="rnk">068</span>
+        <h2 class="ttl">Universal eviction-prevention cash transfer (one-time $3k to families facing eviction)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $100.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$61K</div></div>
+      </div>
+      <p class="blurb">Emergency rental assistance cuts eviction + suicide spike. Cost = transfers.</p>
+      <p class="src">Source: Multiple 2020-2024 ERAP evaluations</p>
+    </section>
+
+    <section class="m" id="m69">
+      <header class="mh">
+        <span class="rnk">069</span>
+        <h2 class="ttl">Universal foreclosure-prevention cash transfer + mediation</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $100.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$92K</div></div>
+      </div>
+      <p class="blurb">Cuts mortgage-related suicide. Cost = transfers.</p>
+      <p class="src">Source: HAMP 2009-2017 evaluation</p>
+    </section>
+
+    <section class="m" id="m70">
+      <header class="mh">
+        <span class="rnk">070</span>
+        <h2 class="ttl">Bankruptcy-medical-debt buyout (waive $10k medical debt per household)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$171K</div></div>
+      </div>
+      <p class="blurb">RIP-style debt abolition. ~60% of bankruptcies cite medical bills; linked to suicide. Cost = charity/budget.</p>
+      <p class="src">Source: RIP Medical Debt model 2014-2024</p>
+    </section>
+
+    <section class="m" id="m71">
+      <header class="mh">
+        <span class="rnk">071</span>
+        <h2 class="ttl">Universal student-debt cancellation (federal + private, partial)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500.0M to $1.50B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$571K</div></div>
+      </div>
+      <p class="blurb">Cancel $20k federal student debt. Cuts debt-stress suicide. Cost = budget.</p>
+      <p class="src">Source: US 2024 cancellation models</p>
+    </section>
+
+    <section class="m" id="m72">
+      <header class="mh">
+        <span class="rnk">072</span>
+        <h2 class="ttl">Free public transportation in major metros (zero-fare buses + rail)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 2,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$261K</div></div>
+      </div>
+      <p class="blurb">Zero-fare transit cuts transit-cost-poverty link + reduces car accident suicide method. Cost = farebox offset.</p>
+      <p class="src">Source: Tallinn 2013; Kansas City 2020</p>
+    </section>
+  </article>
+
+  <article class="sec" id="09">
+    <h2 class="sttl">09. Tier 3B: Clinical Care Pathways and Follow-up (73-81)</h2>
+    
+    <section class="m" id="m73">
+      <header class="mh">
+        <span class="rnk">073</span>
+        <h2 class="ttl">Free universal contraception + IVF access</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 2,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$478K</div></div>
+      </div>
+      <p class="blurb">Unintended pregnancy + infertility both suicide-risk factors. Cost = services.</p>
+      <p class="src">Source: Colorado Family Planning Initiative 2009-2024</p>
+    </section>
+
+    <section class="m" id="m74">
+      <header class="mh">
+        <span class="rnk">074</span>
+        <h2 class="ttl">Free or subsidized childcare for single-parent households</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$314K</div></div>
+      </div>
+      <p class="blurb">Single parents are highest suicide risk among women. Cost = child care + tax credits.</p>
+      <p class="src">Source: Multiple US state programs 2010-2024</p>
+    </section>
+
+    <section class="m" id="m75">
+      <header class="mh">
+        <span class="rnk">075</span>
+        <h2 class="ttl">Universal food stamps (SNAP expansion to 200% federal poverty line)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$171K</div></div>
+      </div>
+      <p class="blurb">Food insecurity doubles suicide risk. Universal SNAP at 200% FPL. Cost = USDA budget.</p>
+      <p class="src">Source: USDA SNAP studies 2010-2024</p>
+    </section>
+
+    <section class="m" id="m76">
+      <header class="mh">
+        <span class="rnk">076</span>
+        <h2 class="ttl">Free school-supplies + uniform program (no-cost K-12)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $50.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$46K</div></div>
+      </div>
+      <p class="blurb">Eliminates child-debt-stigma factor. Cost = supplies.</p>
+      <p class="src">Source: Multiple district programs 2010-2024</p>
+    </section>
+
+    <section class="m" id="m77">
+      <header class="mh">
+        <span class="rnk">077</span>
+        <h2 class="ttl">Free universal menstrual products in schools + public buildings</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">50 to 300</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$31K</div></div>
+      </div>
+      <p class="blurb">Period poverty linked to female adolescent depression. Cost = supplies.</p>
+      <p class="src">Source: Scotland 2018; New Zealand 2021</p>
+    </section>
+
+    <section class="m" id="m78">
+      <header class="mh">
+        <span class="rnk">078</span>
+        <h2 class="ttl">Universal home energy assistance (LIHEAP expansion, energy poverty elimination)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$306K</div></div>
+      </div>
+      <p class="blurb">Cold-home mental-health link; winter fuel poverty. Cost = energy subsidies.</p>
+      <p class="src">Source: LIHEAP studies 2010-2024</p>
+    </section>
+
+    <section class="m" id="m79">
+      <header class="mh">
+        <span class="rnk">079</span>
+        <h2 class="ttl">Free public parks + urban green-space (3-30-300 rule implementation)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $2.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$629K</div></div>
+      </div>
+      <p class="blurb">Tree canopy + park access cuts depression &amp; suicide. Cost = municipal capex.</p>
+      <p class="src">Source: WHO 2016 Urban Green Spaces; multiple 2020-2024 studies</p>
+    </section>
+
+    <section class="m" id="m80">
+      <header class="mh">
+        <span class="rnk">080</span>
+        <h2 class="ttl">Urban heat-island mitigation (cool roofs, tree shade for low-income neighborhoods)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$458K</div></div>
+      </div>
+      <p class="blurb">Heat waves spike male suicide (US 2024 study). Cost = infrastructure.</p>
+      <p class="src">Source: Multiple 2020-2024 climate-health studies</p>
+    </section>
+
+    <section class="m" id="m81">
+      <header class="mh">
+        <span class="rnk">081</span>
+        <h2 class="ttl">Air-pollution reduction mandates (PM2.5 below WHO 2021 guidelines)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 5,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500.0M to $5.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$917K</div></div>
+      </div>
+      <p class="blurb">Long-term PM2.5 exposure raises depression &amp; suicide. Cost = regulation.</p>
+      <p class="src">Source: Multiple 2020-2024 ambient-pollution mental-health studies</p>
+    </section>
+  </article>
+
+  <article class="sec" id="10">
+    <h2 class="sttl">10. Tier 4A: Poverty-Cures-Death: Cash Transfers and Income (82-88)</h2>
+    
+    <section class="m" id="m82">
+      <header class="mh">
+        <span class="rnk">082</span>
+        <h2 class="ttl">Lead-pipe replacement universal program (children&#x27;s IQ + adult mental health)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$500.0M to $5.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$1.6M</div></div>
+      </div>
+      <p class="blurb">Childhood lead exposure predicts adult depression &amp; suicide. Cost = infrastructure.</p>
+      <p class="src">Source: Flint 2014-2024; multiple lead-exposure studies</p>
+    </section>
+
+    <section class="m" id="m83">
+      <header class="mh">
+        <span class="rnk">083</span>
+        <h2 class="ttl">Universal free community-college associate degree</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $1.50B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$243K</div></div>
+      </div>
+      <p class="blurb">Tuition-free associate&#x27;s degree. First-gen college goers see major mental-health lift. Cost = state.</p>
+      <p class="src">Source: Tennessee Promise 2014-2024</p>
+    </section>
+
+    <section class="m" id="m84">
+      <header class="mh">
+        <span class="rnk">084</span>
+        <h2 class="ttl">Apprenticeship-job-matching platform (government-funded, free)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$157K</div></div>
+      </div>
+      <p class="blurb">Apprenticeship pathway reduces youth unemployment-suicide. Cost = employer subsidies + matching.</p>
+      <p class="src">Source: German dual education system 1970-2024</p>
+    </section>
+
+    <section class="m" id="m85">
+      <header class="mh">
+        <span class="rnk">085</span>
+        <h2 class="ttl">Free universal legal aid for housing, family, employment disputes</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$611K</div></div>
+      </div>
+      <p class="blurb">Legal aid cuts stress-related suicide + domestic-violence escalation. Cost = legal services.</p>
+      <p class="src">Source: Multiple civil legal-aid evaluations</p>
+    </section>
+
+    <section class="m" id="m86">
+      <header class="mh">
+        <span class="rnk">086</span>
+        <h2 class="ttl">Free tax-preparation + automatic tax-filing for low-income households</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">100 to 500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$1.0M to $10.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$18K</div></div>
+      </div>
+      <p class="blurb">Eliminates tax-stress + captures EITC + CTC lifts. Cost = IRS budget.</p>
+      <p class="src">Source: IRS Free File; California ReadyReturn</p>
+    </section>
+
+    <section class="m" id="m87">
+      <header class="mh">
+        <span class="rnk">087</span>
+        <h2 class="ttl">Auto-enrollment in all benefit programs (no-questions-asked, opt-out)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$157K</div></div>
+      </div>
+      <p class="blurb">Stigma + paperwork stops ~30% of eligible from enrolling. Auto-enrollment fixes. Cost = state.</p>
+      <p class="src">Source: Social Security auto-enrollment 2024+; universal credit UK model</p>
+    </section>
+
+    <section class="m" id="m88">
+      <header class="mh">
+        <span class="rnk">088</span>
+        <h2 class="ttl">Universal child trust fund / baby bonds ($5-50k per child at 18)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 4,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$244K</div></div>
+      </div>
+      <p class="blurb">Endowment at birth. Eliminates child-future-poverty suicide risk. Cost = budget.</p>
+      <p class="src">Source: UK Child Trust Fund 2005-2011; US Baby Bonds proposed</p>
+    </section>
+
+    <section class="m" id="m89">
+      <header class="mh">
+        <span class="rnk">089</span>
+        <h2 class="ttl">Free universal preventive dental care (oral health-mental health link)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$324K</div></div>
+      </div>
+      <p class="blurb">Dental pain + visible tooth-loss leads to depression. Cost = dental services.</p>
+      <p class="src">Source: Multiple 2020-2024 oral-health/mental-health studies</p>
+    </section>
+
+    <section class="m" id="m90">
+      <header class="mh">
+        <span class="rnk">090</span>
+        <h2 class="ttl">Free universal vision care + glasses (1 in 4 children have uncorrected vision)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$324K</div></div>
+      </div>
+      <p class="blurb">Corrected vision improves school performance + self-esteem. Cost = optometry.</p>
+      <p class="src">Source: Vision Council 2024; multiple screening studies</p>
+    </section>
+  </article>
+
+  <article class="sec" id="11">
+    <h2 class="sttl">11. Tier 4B: Poverty-Cures-Death: Childcare, Education, Housing (89-95)</h2>
+    
+    <section class="m" id="m91">
+      <header class="mh">
+        <span class="rnk">091</span>
+        <h2 class="ttl">Free universal hearing aids (age 65+)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$324K</div></div>
+      </div>
+      <p class="blurb">Hearing loss triples depression risk. Cost = audiology.</p>
+      <p class="src">Source: Hearing loss-dementia-depression studies 2020-2024</p>
+    </section>
+
+    <section class="m" id="m92">
+      <header class="mh">
+        <span class="rnk">092</span>
+        <h2 class="ttl">Universal broadband-subsidized laptop/tablet for low-income students</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">200 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$324K</div></div>
+      </div>
+      <p class="blurb">Digital divide cuts education + mental-health access. Cost = devices.</p>
+      <p class="src">Source: Multiple COVID-era 2020-2024 device-distribution evaluations</p>
+    </section>
+
+    <section class="m" id="m93">
+      <header class="mh">
+        <span class="rnk">093</span>
+        <h2 class="ttl">Free tutoring (K-12 after-school program, evidence-based)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$314K</div></div>
+      </div>
+      <p class="blurb">High-dosage tutoring (3x/wk, 50hr/yr) improves achievement + mental health. Cost = tutors.</p>
+      <p class="src">Source: TEN Tutoring 2024 meta-analysis; Saga 2023</p>
+    </section>
+
+    <section class="m" id="m94">
+      <header class="mh">
+        <span class="rnk">094</span>
+        <h2 class="ttl">Universal sports / arts / music program funding (free after-school for all kids)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 4,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$100.0M to $1.00B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$244K</div></div>
+      </div>
+      <p class="blurb">Free extracurriculars cut teen depression &amp; suicide. Cost = programming.</p>
+      <p class="src">Source: Multiple 2020-2024 extracurricular evaluations</p>
+    </section>
+
+    <section class="m" id="m95">
+      <header class="mh">
+        <span class="rnk">095</span>
+        <h2 class="ttl">AI-powered personalized after-school / online tutoring for low-income (Khanmigo, Khan Academy)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$5.0M to $50.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$8K</div></div>
+      </div>
+      <p class="blurb">Khan-style AI tutor at scale. 1:1 adaptive help. Cost = inference.</p>
+      <p class="src">Source: Khanmigo pilot 2023-2025; Sal Khan 2024</p>
+    </section>
+
+    <section class="m" id="m96">
+      <header class="mh">
+        <span class="rnk">096</span>
+        <h2 class="ttl">Free universal home-visiting nurse for new parents (first 2 years)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">300 to 1,500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$200.0M to $1.50B</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$944K</div></div>
+      </div>
+      <p class="blurb">Nurse visits first-time low-income parents. Cuts postpartum suicide, child abuse. Cost = nurse.</p>
+      <p class="src">Source: NFP; Hawaii Healthy Start; Elmira trial</p>
+    </section>
+
+    <section class="m" id="m97">
+      <header class="mh">
+        <span class="rnk">097</span>
+        <h2 class="ttl">Universal paid bereavement leave (8 weeks after loss of immediate family)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">100 to 500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$20.0M to $200.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$367K</div></div>
+      </div>
+      <p class="blurb">Bereavement is highest-risk acute stressor. Paid leave protects widow/parent. Cost = insurance.</p>
+      <p class="src">Source: OECD studies 2020-2024</p>
+    </section>
+
+    <section class="m" id="m98">
+      <header class="mh">
+        <span class="rnk">098</span>
+        <h2 class="ttl">Universal compassionate-care leave (12 weeks for terminal-illness caregiving)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">100 to 500</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$917K</div></div>
+      </div>
+      <p class="blurb">Family caregivers have 2x suicide risk. Paid leave protects them. Cost = insurance.</p>
+      <p class="src">Source: Multiple state-level evaluations 2010-2024</p>
+    </section>
+
+    <section class="m" id="m99">
+      <header class="mh">
+        <span class="rnk">099</span>
+        <h2 class="ttl">Universal &#x27;medical-financial-counselor&#x27; navigator (free, embedded in clinics)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">500 to 3,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$50.0M to $500.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$157K</div></div>
+      </div>
+      <p class="blurb">Trained counselor helps patients with bills, eligibility, debt. Cost = staff.</p>
+      <p class="src">Source: ProPublica 2020; multiple navigator programs</p>
+    </section>
+  </article>
+
+  <article class="sec" id="12">
+    <h2 class="sttl">12. Tier 5: Universal Services and Micro-Grants (96-100)</h2>
+    
+    <section class="m" id="m100">
+      <header class="mh">
+        <span class="rnk">100</span>
+        <h2 class="ttl">Universal micro-grants for community suicide-prevention initiatives ($5k-$50k per community org)</h2>
+      </header>
+      <div class="mg">
+        <div class="mgc"><div class="lbl">Modelled lives protected / yr (unverified)</div><div class="val">1,000 to 6,000</div></div>
+        <div class="mgc"><div class="lbl">Scenario annual cost</div><div class="val">$10.0M to $100.0M</div></div>
+        <div class="mgc"><div class="lbl">Scenario cost / life protected</div><div class="val">$16K</div></div>
+      </div>
+      <p class="blurb">Bottom-up, community-led micro-grants for local suicide-prevention programs. Flexible, low-overhead. Cost = grants.</p>
+      <p class="src">Source: AFSP community grants 2020-2024; SAMHSA Garrett Lee Smith</p>
+    </section>
+  </article>
+    </main>
+  </div>
+
+  <footer>
+    Pitch Black Industries &nbsp;|&nbsp; Free Public-Interest Research &nbsp;|&nbsp; Blackpaper2 v1 &nbsp;|&nbsp; Built 2026-08-06
+  </footer>
+
+</div>
+
+</body>
+</html>
